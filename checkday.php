@@ -1,6 +1,6 @@
 <?php 
 
-$day="Monday";
+$day="Sunday";
 
 if($day=="Saturday" || $day=="Sunday")
 {

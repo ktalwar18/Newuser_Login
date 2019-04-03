@@ -4,7 +4,7 @@ error_reporting(E_ALL | E_STRICT);
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "ajax";
+$dbname = "emp";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,12 +14,12 @@ if ($conn->connect_error) {
 } 
 if(isset($_POST["save"]))
 {
-	$first =$_POST["first"];
-	$last  =$_POST["last"];
 	$email =$_POST["email"];
+	$password  =$_POST["password"];
 	
-$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('$first', '$last', 'email')";
+	
+$sql = "INSERT INTO user (username, password)
+VALUES ('$email', '$password')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
@@ -32,9 +32,8 @@ $conn->close();
 
 ?>
 <form action="" method="post">
-	Firstname<input type="text" name="first"><br>
-	Lastname<input type="text" name="last"><br>
-	Email<input type="email" name="email"><br>
+	Username<input type="text" name="email"><br>
+	Password<input type="text" name="password"><br>
 	<input type="submit" name="save" value="Submit">
 	</button>
 </form>

@@ -19,8 +19,7 @@ if(isset($_POST["age"]))
  
   
   
-$sql = "INSERT INTO test (age, name)
-VALUES ('".$_POST["age"]."', '".$_POST["name"]."')";
+$sql = "INSERT INTO test (age, name) VALUES ('".$_POST["age"]."', '".$_POST["name"]."')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
